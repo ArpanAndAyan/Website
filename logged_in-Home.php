@@ -1,3 +1,23 @@
+<?php
+
+    session_start();
+    //$diaryContent="";
+
+    if (array_key_exists("id", $_COOKIE) && $_COOKIE ['id']) {
+        
+        $_SESSION['id'] = $_COOKIE['id'];
+        
+    }
+
+    if (!array_key_exists("id", $_SESSION)) {
+              
+      include("connection.php");
+      
+      header("Location: index.php");
+      
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
